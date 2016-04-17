@@ -1,0 +1,611 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x65E5;&amp;#x671F;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x65E5;&amp;#x671F;&amp;#x9009;&amp;#x4E2D;&amp;#x5E93;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x7528;&amp;#x6765;&amp;#x9009;&amp;#x62E9;&amp;#x4E00;&amp;#x6BB5;&amp;#x8FDE;&amp;#x7EED;&amp;#x7684;&amp;#x548C;&amp;#x591A;&amp;#x4E2A;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android日期显示和选择库">
+<meta property="og:url" content="http://yoursite.com/2016/04/17/Android日期显示和选择库/index.html">
+<meta property="og:site_name" content="冰冰的博客">
+<meta property="og:description" content="&amp;#x65E5;&amp;#x671F;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x65E5;&amp;#x671F;&amp;#x9009;&amp;#x4E2D;&amp;#x5E93;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x7528;&amp;#x6765;&amp;#x9009;&amp;#x62E9;&amp;#x4E00;&amp;#x6BB5;&amp;#x8FDE;&amp;#x7EED;&amp;#x7684;&amp;#x548C;&amp;#x591A;&amp;#x4E2A;">
+<meta property="og:image" content="http://yoursite.com/2016/04/17/Android日期显示和选择库/preview.gif">
+<meta property="og:image" content="http://yoursite.com/2016/04/17/Android日期显示和选择库/1.png">
+<meta property="og:updated_time" content="2016-04-17T16:50:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android日期显示和选择库">
+<meta name="twitter:description" content="&amp;#x65E5;&amp;#x671F;&amp;#x663E;&amp;#x793A;&amp;#x548C;&amp;#x65E5;&amp;#x671F;&amp;#x9009;&amp;#x4E2D;&amp;#x5E93;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x7528;&amp;#x6765;&amp;#x9009;&amp;#x62E9;&amp;#x4E00;&amp;#x6BB5;&amp;#x8FDE;&amp;#x7EED;&amp;#x7684;&amp;#x548C;&amp;#x591A;&amp;#x4E2A;">
+<meta name="twitter:image" content="http://yoursite.com/2016/04/17/Android日期显示和选择库/preview.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Android日期显示和选择库 | 冰冰的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">冰冰的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android日期显示和选择库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-17T21:24:26+08:00" content="2016-04-17">
+              2016-04-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/17/Android日期显示和选择库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/17/Android日期显示和选择库/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x65E5;&#x671F;&#x663E;&#x793A;&#x548C;&#x65E5;&#x671F;&#x9009;&#x4E2D;&#x5E93;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9009;&#x62E9;&#x4E00;&#x6BB5;<code>&#x8FDE;&#x7EED;</code>&#x7684;&#x548C;&#x591A;&#x4E2A;<code>&#x4E0D;&#x8FDE;&#x7EED;</code>&#x7684;&#x65E5;&#x671F;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x663E;&#x793A;UI&#x5B8C;&#x5168;&#x62BD;&#x8C61;&#x51FA;&#x6765;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#xFF0C;&#x7075;&#x6D3B;&#x6027;&#x6BD4;&#x8F83;&#x9AD8;</p>
+<h2 id="&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;"><a href="#&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;" class="headerlink" title="&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;:"></a>&#x652F;&#x6301;&#x7684;&#x529F;&#x80FD;:</h2><ul>
+<li>&#x9009;&#x62E9;&#x4E00;&#x6BB5;<code>&#x8FDE;&#x7EED;</code>&#x7684;&#x548C;&#x591A;&#x4E2A;<code>&#x4E0D;&#x8FDE;&#x7EED;</code>&#x7684;&#x65E5;&#x671F;</li>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#xFF08;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/SingleMonthSelector.java" target="_blank" rel="external">SingleMonthSelector</a>&#x3001;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/CalendarSelector.java" target="_blank" rel="external">CalendarSelector</a>&#xFF09;&#x7528;&#x6765;&#x5904;&#x7406;&#x5355;&#x4E2A;&#x6708;&#x548C;&#x591A;&#x4E2A;&#x8FDE;&#x7EED;&#x6708;&#x65E5;&#x671F;&#x7684;&#x9009;&#x62E9;</li>
+<li>&#x53EF;&#x4EE5;&#x62E6;&#x622A;&#x9009;&#x62E9;&#x4E8B;&#x4EF6;&#xFF0C;&#x5F53;&#x9009;&#x62E9;&#x7684;&#x65E5;&#x671F;&#x957F;&#x5EA6;&#x6709;&#x9650;&#x5236;&#x6216;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x65E5;&#x671F;&#x4E0D;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x65F6;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x505A;&#x5904;&#x7406;&#x4F1A;&#x5F88;&#x65B9;&#x4FBF;</li>
+<li>&#x63D0;&#x4F9B;&#x7684;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/SingleMonthSelector.java" target="_blank" rel="external">SingleMonthSelector</a>&#x3001;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/CalendarSelector.java" target="_blank" rel="external">CalendarSelector</a>&#x4E24;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#x90FD;&#x652F;&#x6301;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#xFF0C;&#x53EF;&#x4EE5;restore&#x4E4B;&#x524D;&#x7684;&#x72B6;&#x6001;</li>
+<li>UI&#x663E;&#x793A;&#x53EF;&#x4EE5;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#x7684;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x6BCF;&#x4E2A;&#x6708;&#x4E2D;&#x7684;&#x5929;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;layout&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4E3A;&#x6BCF;&#x6708;&#x7684;&#x884C;&#x548C;&#x5217;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;layout</li>
+<li>&#x56E0;&#x4E3A;&#x73B0;&#x5728;&#x4E16;&#x754C;&#x4E0A;&#x6BCF;&#x4E2A;&#x793C;&#x62DC;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#x5E76;&#x4E0D;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x5DF2;&#x77E5;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x591A;&#x7684;&#x6709;(<code>SUNDAY</code>&#x3001;<code>SATURDAY</code>&#x3001;<code>MONDAY</code>)&#x8FD9;&#x4E09;&#x79CD;&#xFF0C;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x652F;&#x6301;</li>
+<li>&#x4E3A;&#x4E86;&#x5728;layout&#x7684;&#x65F6;&#x5019;&#x80FD;&#x5B9E;&#x65F6;&#x7684;&#x67E5;&#x770B;&#x5177;&#x4F53;&#x7684;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6240;&#x4EE5;&#x63D0;&#x4F9B;&#x4E86;<code>edit mode</code>&#x652F;&#x6301;&#xFF0C;&#x5728;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x662F;&#x6BD4;&#x8F83;&#x65B9;&#x4FBF;&#x7684;</li>
+<li>&#x652F;&#x6301;API+8&#x4EE5;&#x4E0A;&#x7248;&#x672C;</li>
+</ul>
+<a id="more"></a>
+<h2 id="&#x957F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;"><a href="#&#x957F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;" class="headerlink" title="&#x957F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;"></a>&#x957F;&#x8FD9;&#x4E2A;&#x6837;&#x5B50;</h2><p><img src="/2016/04/17/Android&#x65E5;&#x671F;&#x663E;&#x793A;&#x548C;&#x9009;&#x62E9;&#x5E93;/preview.gif" alt="&#x9884;&#x89C8;"></p>
+<h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;"><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;" class="headerlink" title="&#x5982;&#x4F55;&#x4F7F;&#x7528;"></a>&#x5982;&#x4F55;&#x4F7F;&#x7528;</h2><p>&#x5728;Gradle&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x4F9D;&#x8D56;</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile <span class="string">&apos;com.tubb.calendarselector.library:calendar-selector:0.1.1&apos;</span></span><br></pre></td></tr></table></figure>
+<p>&#x4F7F;&#x7528;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/MonthView.java" target="_blank" rel="external">MonthView</a>&#x6765;&#x663E;&#x793A;&#x6708;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x81EA;&#x5B9A;&#x4E49;View&#xFF0C;&#x4E3B;&#x8981;&#x5DE5;&#x4F5C;&#x662F;&#x7EC4;&#x5408;&#x663E;&#x793A;&#x67D0;&#x4E2A;&#x6708;&#x7684;&#x5929;&#x6570;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">com.tubb.calendarselector.library.MonthView</span></span><br><span class="line">    <span class="attr">android:id</span>=<span class="string">&quot;@+id/ssMv&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;300dp&quot;</span></span><br><span class="line">    <span class="attr">sc:sc_firstday_week</span>=<span class="string">&quot;sunday&quot;</span></span><br><span class="line">    <span class="attr">sc:sc_draw_monthday_only</span>=<span class="string">&quot;false&quot;</span></span><br><span class="line">    <span class="attr">sc:sc_month</span>=<span class="string">&quot;2016-3&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2016/04/17/Android&#x65E5;&#x671F;&#x663E;&#x793A;&#x548C;&#x9009;&#x62E9;&#x5E93;/1.png" alt="&#x5E03;&#x5C40;&#x793A;&#x4F8B;"></p>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E24;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#x6765;&#x8FDB;&#x884C;&#x65E5;&#x671F;&#x7684;&#x9009;&#x62E9;&#x529F;&#x80FD;&#xFF0C;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/SingleMonthSelector.java" target="_blank" rel="external">SingleMonthSelector</a>&#x7528;&#x6765;&#x8FDB;&#x884C;&#x5355;&#x4E2A;&#x6708;&#x7684;&#x9009;&#x62E9;&#xFF0C;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/CalendarSelector.java" target="_blank" rel="external">CalendarSelector</a>&#x7528;&#x6765;&#x8FDB;&#x884C;&#x591A;&#x4E2A;&#x8FDE;&#x7EED;&#x6708;&#x7684;&#x9009;&#x62E9;&#xFF0C;<br>&#x6211;&#x4EEC;&#x4E5F;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x5DE5;&#x5177;&#x7C7B;&#x63D0;&#x4F9B;&#x4E86;&#x72B6;&#x6001;&#x4FDD;&#x6301;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4E3A;&#x4E86;&#x5728;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x5019;&#x8FDB;&#x884C;&#x72B6;&#x6001;&#x7684;&#x6062;&#x590D;&#xFF0C;&#x7ED9;&#x7528;&#x6237;&#x66F4;&#x597D;&#x4E00;&#x70B9;&#x7684;&#x4F53;&#x9A8C;&#xFF0C;&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x67E5;&#x770B;<a href="https://github.com/TUBB/CalendarSelector/blob/master/app/src/main/java/com/tubb/calendarselector/normal/StateSavedActivity.java" target="_blank" rel="external">StateSavedActivity</a></p>
+<p>&#x4F7F;&#x7528;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/SingleMonthSelector.java" target="_blank" rel="external">SingleMonthSelector</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">singleMonthSelector.bind(monthView);</span><br></pre></td></tr></table></figure>
+<p>&#x4F7F;&#x7528;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/CalendarSelector.java" target="_blank" rel="external">CalendarSelector</a> (&#x8FD9;&#x91CC;&#x6709;&#x70B9;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;&#x8FD8;&#x4E0D;&#x652F;&#x6301;<code>ListView</code>&#xFF0C;&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>RecyclerView</code>&#x597D;&#x4E86;)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendarSelector.bind(containerViewGroup, monthView, itemPosition);</span><br></pre></td></tr></table></figure>
+<p>&#x6211;&#x4EEC;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x65E5;&#x671F;&#x9009;&#x62E9;&#x5DE5;&#x5177;&#x7C7B;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x6765;&#x652F;&#x6301;&#x9009;&#x62E9;<code>&#x8FDE;&#x7EED;(SEGMENT)</code>&#x548C;<code>&#x4E0D;&#x8FDE;&#x7EED;(INTERVAL)</code>&#x7684;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;</p>
+<p><code>SEGMENT</code> MODE</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">selector = <span class="keyword">new</span> CalendarSelector(data, CalendarSelector.Mode.SEGMENT);</span><br><span class="line">selector.setSegmentSelectListener(<span class="keyword">new</span> SegmentSelectListener() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSegmentSelect</span><span class="params">(FullDay startDay, FullDay endDay)</span> </span>{</span><br><span class="line">        Log.d(TAG, <span class="string">&quot;segment select &quot;</span> + startDay.toString() + <span class="string">&quot; : &quot;</span> + endDay.toString());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onInterceptSelect</span><span class="params">(FullDay selectingDay)</span> </span>{ <span class="comment">// one day intercept</span></span><br><span class="line">        <span class="keyword">if</span>(SCDateUtils.isToday(selectingDay.getYear(), selectingDay.getMonth(), selectingDay.getDay())){</span><br><span class="line">            Toast.makeText(CalendarSelectorActivity.<span class="keyword">this</span>, <span class="string">&quot;Today can&apos;t be selected&quot;</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onInterceptSelect(selectingDay);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onInterceptSelect</span><span class="params">(FullDay startDay, FullDay endDay)</span> </span>{ <span class="comment">// segment days intercept</span></span><br><span class="line">        <span class="keyword">int</span> differDays = SCDateUtils.countDays(startDay.getYear(), startDay.getMonth(), startDay.getDay(),</span><br><span class="line">                endDay.getYear(), endDay.getMonth(), endDay.getDay());</span><br><span class="line">        Log.d(TAG, <span class="string">&quot;differDays &quot;</span> + differDays);</span><br><span class="line">        <span class="keyword">if</span>(differDays &gt; <span class="number">10</span>) {</span><br><span class="line">            Toast.makeText(CalendarSelectorActivity.<span class="keyword">this</span>, <span class="string">&quot;Selected days can&apos;t more than 10&quot;</span>, Toast.LENGTH_SHORT).show();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onInterceptSelect(startDay, endDay);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">selectedSameDay</span><span class="params">(FullDay sameDay)</span> </span>{ <span class="comment">// selected the same day</span></span><br><span class="line">        <span class="keyword">super</span>.selectedSameDay(sameDay);</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<p><code>INTERVAL</code> mode</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">selector = <span class="keyword">new</span> SingleMonthSelector(CalendarSelector.Mode.INTERVAL);</span><br><span class="line">selector.setIntervalSelectListener(<span class="keyword">new</span> IntervalSelectListener() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onIntervalSelect</span><span class="params">(List&lt;FullDay&gt; selectedDays)</span> </span>{</span><br><span class="line">        Log.d(TAG, <span class="string">&quot;interval selected days &quot;</span> + selectedDays.toString());</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onInterceptSelect</span><span class="params">(List&lt;FullDay&gt; selectedDays, FullDay selectingDay)</span> </span>{</span><br><span class="line">        <span class="keyword">if</span>(selectedDays.size() &gt;= <span class="number">5</span>) {</span><br><span class="line">            Toast.makeText(SingleMonthSelectorActivity.<span class="keyword">this</span>, <span class="string">&quot;Selected days can&apos;t more than 5&quot;</span>, Toast.LENGTH_LONG).show();</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onInterceptSelect(selectedDays, selectingDay);</span><br><span class="line">    }</span><br><span class="line">});</span><br></pre></td></tr></table></figure>
+<p>&#x5728;&#x8FD9;&#x4E24;&#x79CD;&#x6A21;&#x5F0F;&#x4E0B;&#x6211;&#x4EEC;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;<code>&#x9009;&#x62E9;</code>&#x4E8B;&#x4EF6;&#x7684;&#x62E6;&#x622A;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x6709;&#x80FD;&#x529B;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x6BD4;&#x5982;&#x65E5;&#x671F;&#x957F;&#x5EA6;&#x7684;&#x9650;&#x5236;&#x3001;&#x67D0;&#x4E9B;&#x7279;&#x6B8A;&#x65E5;&#x671F;&#x4E0D;&#x53EF;&#x9009;&#x62E9;&#x7B49;</p>
+<p>&#x5177;&#x4F53;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x793A;&#x4F8B;&#x7A0B;&#x5E8F; <a href="https://github.com/TUBB/CalendarSelector/blob/master/app/src/main/java/com/tubb/calendarselector/normal/SingleMonthSelectorActivity.java" target="_blank" rel="external">SingleMonthSelectorActivity</a> &#x548C; <a href="https://github.com/TUBB/CalendarSelector/blob/master/app/src/main/java/com/tubb/calendarselector/normal/CalendarSelectorActivity.java" target="_blank" rel="external">CalendarSelectorActivity</a></p>
+<h2 id="&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;"><a href="#&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;" class="headerlink" title="&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;"></a>&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;</h2><p>&#x6211;&#x4EEC;&#x4E3A;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/MonthView.java" target="_blank" rel="external">MonthView</a>&#x7684;&#x663E;&#x793A;&#x63D0;&#x4F9B;&#x4E86;&#x975E;&#x5E38;&#x7075;&#x6D3B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x529F;&#x80FD;&#xFF0C;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/MonthView.java" target="_blank" rel="external">MonthView</a>&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x5B8C;&#x5584;&#x7684;&#x81EA;&#x5B9A;&#x4E49;View&#xFF0C;&#x5E76;&#x4E14;&#x5177;&#x4F53;&#x67D0;&#x5929;&#x7684;&#x663E;&#x793A;&#x90FD;&#x53EF;&#x4EE5;&#x5728;layout&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">FrameLayout</span> <span class="attr">xmlns:android</span>=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span><br><span class="line">    <span class="attr">xmlns:tools</span>=<span class="string">&quot;http://schemas.android.com/tools&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span><br><span class="line">        <span class="attr">android:id</span>=<span class="string">&quot;@+id/tvDay&quot;</span></span><br><span class="line">        <span class="attr">android:layout_width</span>=<span class="string">&quot;30dp&quot;</span></span><br><span class="line">        <span class="attr">android:layout_height</span>=<span class="string">&quot;30dp&quot;</span></span><br><span class="line">        <span class="attr">android:textSize</span>=<span class="string">&quot;@dimen/t_16&quot;</span></span><br><span class="line">        <span class="attr">tools:text</span>=<span class="string">&quot;0&quot;</span></span><br><span class="line">        <span class="attr">android:layout_gravity</span>=<span class="string">&quot;center&quot;</span></span><br><span class="line">        <span class="attr">android:gravity</span>=<span class="string">&quot;center&quot;</span></span><br><span class="line">        <span class="attr">android:textColor</span>=<span class="string">&quot;@color/color_dayview_text_selector&quot;</span></span><br><span class="line">        <span class="attr">android:background</span>=<span class="string">&quot;@drawable/drawable_custom_dayview_text_bg&quot;</span></span><br><span class="line">        /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">FrameLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>&#x4E3A;&#x4E86;&#x6BD4;&#x8F83;&#x7075;&#x6D3B;&#x7684;&#x5B9E;&#x73B0;&#x4E0A;&#x9762;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x529F;&#x80FD;&#xFF0C;&#x6211;&#x4EEC;&#x7279;&#x610F;&#x62BD;&#x8C61;&#x51FA;&#x6765;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;<code>DayViewInflater</code>&#xFF0C;&#x53EA;&#x8981;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x8BBE;&#x7F6E;(<code>MonthView.setSCMonth(scMonth, new CustomDayViewInflater(context))</code>)&#x5C31;&#x884C;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomDayViewInflater</span> <span class="keyword">extends</span> <span class="title">DayViewInflater</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomDayViewInflater</span><span class="params">(Context context)</span> </span>{</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DayViewHolder <span class="title">inflateDayView</span><span class="params">(ViewGroup container)</span> </span>{</span><br><span class="line">        View dayView = mLayoutInflater.inflate(R.layout.layout_dayview_custom, container, <span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CustomDayViewHolder(dayView);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomDayViewHolder</span> <span class="keyword">extends</span> <span class="title">DayViewHolder</span></span>{</span><br><span class="line"></span><br><span class="line">        <span class="keyword">protected</span> TextView tvDay;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> mPrevMonthDayTextColor;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">int</span> mNextMonthDayTextColor;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">CustomDayViewHolder</span><span class="params">(View dayView)</span> </span>{</span><br><span class="line">            <span class="keyword">super</span>(dayView);</span><br><span class="line">            tvDay = (TextView) dayView.findViewById(com.tubb.calendarselector.library.R.id.tvDay);</span><br><span class="line">            mPrevMonthDayTextColor = ContextCompat.getColor(mContext, com.tubb.calendarselector.library.R.color.c_999999);</span><br><span class="line">            mNextMonthDayTextColor = ContextCompat.getColor(mContext, com.tubb.calendarselector.library.R.color.c_999999);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCurrentMonthDayText</span><span class="params">(FullDay day, <span class="keyword">boolean</span> isSelected)</span> </span>{</span><br><span class="line">            tvDay.setText(String.valueOf(day.getDay()));</span><br><span class="line">            tvDay.setSelected(isSelected);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrevMonthDayText</span><span class="params">(FullDay day)</span> </span>{</span><br><span class="line">            tvDay.setTextColor(mPrevMonthDayTextColor);</span><br><span class="line">            tvDay.setText(String.valueOf(day.getDay()));</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNextMonthDayText</span><span class="params">(FullDay day)</span> </span>{</span><br><span class="line">            tvDay.setTextColor(mNextMonthDayTextColor);</span><br><span class="line">            tvDay.setText(String.valueOf(day.getDay()));</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x65E2;&#x7136;&#x662F;&#x65E5;&#x671F;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x90A3;&#x4E48;&#x4F1A;&#x6709;&#x4E24;&#x79CD;&#x72B6;&#x6001;&#xFF08;<code>&#x9009;&#x4E2D;</code>&#x3001;<code>&#x672A;&#x9009;&#x4E2D;</code>&#xFF09;&#x4E4B;&#x95F4;&#x7684;&#x5207;&#x6362;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x628A;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x5207;&#x6362;&#x7684;&#x63A5;&#x53E3;&#x66B4;&#x9732;&#x51FA;&#x6765;&#x4E86;&#xFF08;<code>DayViewHolder.setCurrentMonthDayText(FullDay day, boolean isSelected)</code>&#xFF09;&#xFF0C;<br>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x72B6;&#x6001;&#x5207;&#x6362;&#x7684;&#x65F6;&#x5019;&#x5F04;&#x4E9B;&#x52A8;&#x753B;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x53EF;&#x4EE5;&#x67E5;&#x770B;<a href="https://github.com/TUBB/CalendarSelector/blob/master/app/src/main/java/com/tubb/calendarselector/custom/AnimDayViewInflater.java" target="_blank" rel="external">AnimDayViewInflater</a>&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCurrentMonthDayText</span><span class="params">(FullDay day, <span class="keyword">boolean</span> isSelected)</span> </span>{</span><br><span class="line">    <span class="keyword">boolean</span> oldSelected = tvDay.isSelected();</span><br><span class="line">    tvDay.setText(String.valueOf(day.getDay()));</span><br><span class="line">    tvDay.setSelected(isSelected);</span><br><span class="line">    <span class="comment">// view selected animation</span></span><br><span class="line">    <span class="keyword">if</span>(!oldSelected &amp;&amp; isSelected){</span><br><span class="line">        AnimatorSet animatorSet = <span class="keyword">new</span> AnimatorSet();</span><br><span class="line">        animatorSet.setInterpolator(AnimationUtils.loadInterpolator(mContext, android.R.anim.bounce_interpolator));</span><br><span class="line">        animatorSet.play(ObjectAnimator.ofFloat(tvDay, <span class="string">&quot;scaleX&quot;</span>, <span class="number">0.5f</span>, <span class="number">1.0f</span>))</span><br><span class="line">                .with(ObjectAnimator.ofFloat(tvDay, <span class="string">&quot;scaleY&quot;</span>, <span class="number">0.5f</span>, <span class="number">1.0f</span>));</span><br><span class="line">        animatorSet.setDuration(<span class="number">500</span>)</span><br><span class="line">                .start();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5728;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x53EF;&#x80FD;&#x4F1A;&#x4E3A;<a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/MonthView.java" target="_blank" rel="external">MonthView</a>&#x7684;&#x884C;&#x548C;&#x5217;&#x52A0;&#x4E00;&#x4E9B;&#x88C5;&#x9970;&#x663E;&#x5F97;&#x66F4;&#x7F8E;&#x89C2;&#x4E00;&#x70B9;&#xFF0C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x6211;&#x4EEC;&#x4E5F;&#x662F;&#x652F;&#x6301;&#x7684;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x67E5;&#x770B; <a href="https://github.com/TUBB/CalendarSelector/blob/master/app/src/main/java/com/tubb/calendarselector/custom/DecorDayViewInflater.java" target="_blank" rel="external">DecorDayViewInflater</a>&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Decor <span class="title">inflateHorizontalDecor</span><span class="params">(ViewGroup container, <span class="keyword">int</span> row, <span class="keyword">int</span> totalRow)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Decor(mLayoutInflater.inflate(R.layout.view_horizontal_decor, container, <span class="keyword">false</span>), <span class="keyword">true</span>);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Decor <span class="title">inflateVerticalDecor</span><span class="params">(ViewGroup container, <span class="keyword">int</span> col, <span class="keyword">int</span> totalCol)</span> </span>{</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Decor(mLayoutInflater.inflate(R.layout.view_vertical_decor, container, <span class="keyword">false</span>), <span class="keyword">true</span>);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6211;&#x4EEC;&#x8FD8;&#x4E3A; <a href="https://github.com/TUBB/CalendarSelector/blob/master/library/src/main/java/com/tubb/calendarselector/library/MonthView.java" target="_blank" rel="external">MonthView</a>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x81EA;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982;<code>&#x53EA;&#x663E;&#x793A;&#x672C;&#x6708;&#x7684;&#x65E5;&#x671F;</code>&#x3001;<code>&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x661F;&#x671F;&#x7684;&#x54EA;&#x5929;&#x4E3A;&#x7B2C;&#x4E00;&#x5929;</code>&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x4E3A;&#x5F00;&#x53D1;&#x8C03;&#x8BD5;&#x65F6;&#x5019;&#x65B9;&#x4FBF;&#x800C;&#x52A0;&#x5165;&#x7684;&#x5C5E;&#x6027;&#x7B49;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">&quot;MonthView&quot;</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- only draw the month day, or not, default is false --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">&quot;sc_draw_monthday_only&quot;</span> <span class="attr">format</span>=<span class="string">&quot;boolean&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- start day of a week, we support (sunday&#x3001;monday and saturday) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">&quot;sc_firstday_week&quot;</span> <span class="attr">format</span>=<span class="string">&quot;enum&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">&quot;sunday&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">&quot;monday&quot;</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">&quot;saturday&quot;</span> <span class="attr">value</span>=<span class="string">&quot;7&quot;</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">attr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!-- editor mode only --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- test selected days (format:1,2,3,4) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">&quot;sc_selected_days&quot;</span> <span class="attr">format</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- test month (format:2016-3) --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">&quot;sc_month&quot;</span> <span class="attr">format</span>=<span class="string">&quot;string&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"><a href="#&#x4F18;&#x5316;&#x5EFA;&#x8BAE;" class="headerlink" title="&#x4F18;&#x5316;&#x5EFA;&#x8BAE;"></a>&#x4F18;&#x5316;&#x5EFA;&#x8BAE;</h2><p>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x7591;&#x95EE;&#x90FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8054;&#x7CFB;&#x6211;&#xFF08;<code>Email:tu.bingbing@163.com</code>&#xFF09;&#x6216;&#x8005;&#x5728;<code>GITHUB</code>&#x63D0;issue&#xFF0C;&#x81EA;&#x5DF1;&#x4E5F;&#x4F1A;&#x4E00;&#x76F4;&#x4F18;&#x5316;&#x548C;&#x7EF4;&#x62A4;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#xFF1A;&#xFF09;</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/17/Android日期显示和选择库/"
+           data-title="Android日期显示和选择库" data-url="http://yoursite.com/2016/04/17/Android日期显示和选择库/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            全部文章
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Pobi" />
+          <p class="site-author-name" itemprop="name">Pobi</p>
+          <p class="site-description motion-element" itemprop="description">因为喜爱，所以精彩</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">文章数</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持的功能"><span class="nav-number">1.</span> <span class="nav-text">支持的功能:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长这个样子"><span class="nav-number">2.</span> <span class="nav-text">长这个样子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">3.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何自定义"><span class="nav-number">4.</span> <span class="nav-text">如何自定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化建议"><span class="nav-number">5.</span> <span class="nav-text">优化建议</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pobi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tubb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
