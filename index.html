@@ -445,127 +445,6 @@
             
               
                 
-                <a class="post-title-link" href="/2018/03/04/SQLite表‘外观’类生成器/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-04T18:22:51+08:00" content="2018-03-04">
-              2018-03-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2018/03/04/SQLite表‘外观’类生成器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/04/SQLite表‘外观’类生成器/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>APP&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x6216;&#x8005;APP&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x5C11;, &#x7B80;&#x5355;&#x7684;&#x51E0;&#x5F20;&#x8868;, &#x5C11;&#x91CF;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x3002; &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5176;&#x5B9E;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x53BB;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;ORM&#x5E93;</p>
-<ul>
-<li>&#x9700;&#x8981;&#x53BB;&#x5B66;&#x4E60;&#x7B2C;&#x4E09;&#x65B9;ORM&#x5E93;, &#x589E;&#x52A0;&#x5B66;&#x4E60;&#x6210;&#x672C;, &#x4E5F;&#x4F1A;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x589E;&#x52A0;APP&#x7684;&#x590D;&#x6742;&#x5EA6;</li>
-<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6216;&#x8005;&#x9009;&#x62E9;&#x4E0D;&#x5F53;&#x7684;&#x8BDD;, &#x53EF;&#x80FD;&#x5F71;&#x54CD;APP&#x6574;&#x4F53;&#x7684;&#x6027;&#x80FD;, &#x597D;&#x591A;ORM&#x5E93;&#x5176;&#x5B9E;&#x662F;&#x7528;&#x8FD0;&#x884C;&#x65F6;&#x6CE8;&#x89E3;&#x548C;&#x53CD;&#x5C04;&#x6765;&#x5B9E;&#x73B0;&#x7684;, &#x5BF9;&#x6027;&#x80FD;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5F71;&#x54CD;</li>
-</ul>
-<p><code>SqlGenerator</code>&#x81F4;&#x529B;&#x4E8E;&#x5728;&#x4E0D;&#x4F7F;&#x7528;ORM&#x5E93;&#x7684;&#x60C5;&#x51B5;&#x4E0B;, &#x901A;&#x8FC7;&#x751F;&#x6210;&#x4E00;&#x4E9B;<code>boilerplate code</code>&#x65B9;&#x5F0F;&#x7B80;&#x5316;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;, &#x4ECE;&#x800C;&#x51CF;&#x8F7B;&#x5DE5;&#x4F5C;&#x91CF;</p>
-<p>&#x73B0;&#x5728;<code>SqlGenerator</code>&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x6839;&#x636E;Model&#x7684;&#x5B9A;&#x4E49;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;Table&#x5B9A;&#x4E49;, &#x907F;&#x514D;&#x7F16;&#x5199;&#x67AF;&#x71E5;&#x7684;&#x4EE3;&#x7801;</p>
-<ul>
-<li>&#x6839;&#x636E;Model&#x7684;&#x5C5E;&#x6027;&#x540D;&#x751F;&#x6210;Table&#x7684;&#x5217;&#x540D;, &#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5217;&#x7684;&#x7EA6;&#x675F;</li>
-<li>&#x6839;&#x636E;Model&#x7684;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x5EFA;&#x8868;SQL, &#x652F;&#x6301;&#x5916;&#x952E;</li>
-<li>&#x751F;&#x6210;&#x5EFA;&#x7D22;&#x5F15;SQL</li>
-<li>&#x652F;&#x6301;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x7684;&#x6620;&#x5C04;</li>
-</ul>
-<p>Model&#x5B9A;&#x4E49;&#x5982;&#x4E0B;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Table</span>(name = <span class="string">&quot;User&quot;</span>)</span><br><span class="line"><span class="meta">@Index</span>(name = <span class="string">&quot;name_age_index&quot;</span>, columns = {<span class="string">&quot;name&quot;</span>, <span class="string">&quot;age&quot;</span>}, unique = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PrimaryKey</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">long</span> id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(unique = <span class="keyword">true</span>, notNULL = <span class="keyword">true</span>)</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Serializer</span>(</span><br><span class="line">            serializedTypeCanonicalName = String.class,</span><br><span class="line">            serializerCanonicalName = FileSerializer.class)</span><br><span class="line">    <span class="keyword">public</span> File avtar;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(check = <span class="string">&quot;age&gt;16&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">&quot;address_id&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> Address address;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ForeignKey</span>(referenceTableName = <span class="string">&quot;Group&quot;</span>, referenceColumnName = <span class="string">&quot;id&quot;</span>, action = <span class="string">&quot;ON UPDATE CASCADE&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">long</span> groupId;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<p>&#x6700;&#x7EC8;&#x4F1A;&#x751F;&#x6210;&#x8868;&#x7684;<code>&#x5916;&#x89C2;</code>&#x7C7B;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">UserContract</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TABLE_NAME = <span class="string">&quot;User&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ID_COLUMN = <span class="string">&quot;id&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String NAME_COLUMN = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AVTAR_COLUMN = <span class="string">&quot;avtar&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AGE_COLUMN = <span class="string">&quot;age&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ADDRESS_ID_COLUMN = <span class="string">&quot;address_id&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String GROUPID_COLUMN = <span class="string">&quot;groupId&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_TABLE_SQL = <span class="string">&quot;CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL UNIQUE,avtar TEXT,age INTEGER CHECK(age&gt;16),address_id TEXT,groupId INTEGER,FOREIGN KEY(groupId) REFERENCES Group(id) ON UPDATE CASCADE)&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_NAME_AGE_INDEX_SQL = <span class="string">&quot;CREATE INDEX name_age_index ON User(name,age)&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserContract</span><span class="params">()</span> </span>{</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createTable</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL UNIQUE,avtar TEXT,age INTEGER CHECK(age&gt;16),address_id TEXT,groupId INTEGER,FOREIGN KEY(groupId) REFERENCES Group(id) ON UPDATE CASCADE)&quot;</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createIndex</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;CREATE INDEX name_age_index ON User(name,age)&quot;</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">dropTable</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;DROP TABLE IF EXISTS User&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buildscript {</span><br><span class="line">  repositories {</span><br><span class="line">    mavenCentral()</span><br><span class="line">   }</span><br><span class="line">  dependencies {</span><br><span class="line">    classpath <span class="string">&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span></span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">&apos;com.neenbedankt.android-apt&apos;</span></span><br><span class="line"></span><br><span class="line">dependencies {</span><br><span class="line">  compile <span class="string">&apos;com.github.tubb.sqlgenerator:sqlgenerator-annotations:0.0.3-SNAPSHOT&apos;</span></span><br><span class="line">  apt <span class="string">&apos;com.github.tubb.sqlgenerator:sqlgenerator-compiler:0.0.3-SNAPSHOT&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>&#x5B9A;&#x4E49;&#x597D;Model&#x7C7B;&#x4E4B;&#x540E;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x5E94;&#x7528;, &#x4F1A;&#x751F;&#x6210;&#x4EE5;ModelNameContract&#x547D;&#x540D;&#x7684;&#x8868;<code>&#x5916;&#x89C2;</code>&#x7C7B;, &#x53EF;&#x4EE5;&#x5728;<code>moduleName/build/intermediates/classes</code>&#x76EE;&#x5F55;&#x4E0B;&#x67E5;&#x770B;</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew clean build</span><br></pre></td></tr></table></figure>
-<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p><code>SqlGenerator</code>&#x8FD8;&#x5904;&#x4E8E;&#x5F00;&#x53D1;&#x9636;&#x6BB5;, &#x529F;&#x80FD;&#x4E0D;&#x662F;&#x5F88;&#x7A33;&#x5B9A;, &#x6B63;&#x5F0F;&#x9879;&#x76EE;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#x3002;&#x975E;&#x5E38;&#x5E0C;&#x671B;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x6765;&#x4E00;&#x8D77;&#x5B8C;&#x5584;&#x8FD9;&#x4E2A;library</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2018/03/04/组件间Activity路由框架/" itemprop="url">
                   组件间Activity路由框架
                 </a>
@@ -622,6 +501,127 @@
               阅读全文 &raquo;
             </a>
           </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/03/SQLite表‘外观’类生成器/" itemprop="url">
+                  SQLite表‘外观’类生成器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-03T19:21:31+08:00" content="2018-03-03">
+              2018-03-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/03/SQLite表‘外观’类生成器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/03/SQLite表‘外观’类生成器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>APP&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x6216;&#x8005;APP&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#x6BD4;&#x8F83;&#x5C11;, &#x7B80;&#x5355;&#x7684;&#x51E0;&#x5F20;&#x8868;, &#x5C11;&#x91CF;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x3002; &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5176;&#x5B9E;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x53BB;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;ORM&#x5E93;</p>
+<ul>
+<li>&#x9700;&#x8981;&#x53BB;&#x5B66;&#x4E60;&#x7B2C;&#x4E09;&#x65B9;ORM&#x5E93;, &#x589E;&#x52A0;&#x5B66;&#x4E60;&#x6210;&#x672C;, &#x4E5F;&#x4F1A;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x589E;&#x52A0;APP&#x7684;&#x590D;&#x6742;&#x5EA6;</li>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x6216;&#x8005;&#x9009;&#x62E9;&#x4E0D;&#x5F53;&#x7684;&#x8BDD;, &#x53EF;&#x80FD;&#x5F71;&#x54CD;APP&#x6574;&#x4F53;&#x7684;&#x6027;&#x80FD;, &#x597D;&#x591A;ORM&#x5E93;&#x5176;&#x5B9E;&#x662F;&#x7528;&#x8FD0;&#x884C;&#x65F6;&#x6CE8;&#x89E3;&#x548C;&#x53CD;&#x5C04;&#x6765;&#x5B9E;&#x73B0;&#x7684;, &#x5BF9;&#x6027;&#x80FD;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5F71;&#x54CD;</li>
+</ul>
+<p><code>SqlGenerator</code>&#x81F4;&#x529B;&#x4E8E;&#x5728;&#x4E0D;&#x4F7F;&#x7528;ORM&#x5E93;&#x7684;&#x60C5;&#x51B5;&#x4E0B;, &#x901A;&#x8FC7;&#x751F;&#x6210;&#x4E00;&#x4E9B;<code>boilerplate code</code>&#x65B9;&#x5F0F;&#x7B80;&#x5316;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;, &#x4ECE;&#x800C;&#x51CF;&#x8F7B;&#x5DE5;&#x4F5C;&#x91CF;</p>
+<p>&#x73B0;&#x5728;<code>SqlGenerator</code>&#x5DF2;&#x7ECF;&#x652F;&#x6301;&#x6839;&#x636E;Model&#x7684;&#x5B9A;&#x4E49;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;Table&#x5B9A;&#x4E49;, &#x907F;&#x514D;&#x7F16;&#x5199;&#x67AF;&#x71E5;&#x7684;&#x4EE3;&#x7801;</p>
+<ul>
+<li>&#x6839;&#x636E;Model&#x7684;&#x5C5E;&#x6027;&#x540D;&#x751F;&#x6210;Table&#x7684;&#x5217;&#x540D;, &#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5217;&#x7684;&#x7EA6;&#x675F;</li>
+<li>&#x6839;&#x636E;Model&#x7684;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x5EFA;&#x8868;SQL, &#x652F;&#x6301;&#x5916;&#x952E;</li>
+<li>&#x751F;&#x6210;&#x5EFA;&#x7D22;&#x5F15;SQL</li>
+<li>&#x652F;&#x6301;&#x590D;&#x6742;&#x7C7B;&#x578B;&#x7684;&#x6620;&#x5C04;</li>
+</ul>
+<p>Model&#x5B9A;&#x4E49;&#x5982;&#x4E0B;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Table</span>(name = <span class="string">&quot;User&quot;</span>)</span><br><span class="line"><span class="meta">@Index</span>(name = <span class="string">&quot;name_age_index&quot;</span>, columns = {<span class="string">&quot;name&quot;</span>, <span class="string">&quot;age&quot;</span>}, unique = <span class="keyword">true</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PrimaryKey</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">long</span> id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(unique = <span class="keyword">true</span>, notNULL = <span class="keyword">true</span>)</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Serializer</span>(</span><br><span class="line">            serializedTypeCanonicalName = String.class,</span><br><span class="line">            serializerCanonicalName = FileSerializer.class)</span><br><span class="line">    <span class="keyword">public</span> File avtar;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(check = <span class="string">&quot;age&gt;16&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Column</span>(name = <span class="string">&quot;address_id&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> Address address;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ForeignKey</span>(referenceTableName = <span class="string">&quot;Group&quot;</span>, referenceColumnName = <span class="string">&quot;id&quot;</span>, action = <span class="string">&quot;ON UPDATE CASCADE&quot;</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">long</span> groupId;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x6700;&#x7EC8;&#x4F1A;&#x751F;&#x6210;&#x8868;&#x7684;<code>&#x5916;&#x89C2;</code>&#x7C7B;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">UserContract</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String TABLE_NAME = <span class="string">&quot;User&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ID_COLUMN = <span class="string">&quot;id&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String NAME_COLUMN = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AVTAR_COLUMN = <span class="string">&quot;avtar&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String AGE_COLUMN = <span class="string">&quot;age&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ADDRESS_ID_COLUMN = <span class="string">&quot;address_id&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String GROUPID_COLUMN = <span class="string">&quot;groupId&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_TABLE_SQL = <span class="string">&quot;CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL UNIQUE,avtar TEXT,age INTEGER CHECK(age&gt;16),address_id TEXT,groupId INTEGER,FOREIGN KEY(groupId) REFERENCES Group(id) ON UPDATE CASCADE)&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String CREATE_NAME_AGE_INDEX_SQL = <span class="string">&quot;CREATE INDEX name_age_index ON User(name,age)&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserContract</span><span class="params">()</span> </span>{</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createTable</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;CREATE TABLE IF NOT EXISTS User(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL UNIQUE,avtar TEXT,age INTEGER CHECK(age&gt;16),address_id TEXT,groupId INTEGER,FOREIGN KEY(groupId) REFERENCES Group(id) ON UPDATE CASCADE)&quot;</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">createIndex</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;CREATE INDEX name_age_index ON User(name,age)&quot;</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">dropTable</span><span class="params">(SQLiteDatabase db)</span> </span>{</span><br><span class="line">        db.execSQL(<span class="string">&quot;DROP TABLE IF EXISTS User&quot;</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">buildscript {</span><br><span class="line">  repositories {</span><br><span class="line">    mavenCentral()</span><br><span class="line">   }</span><br><span class="line">  dependencies {</span><br><span class="line">    classpath <span class="string">&apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</span></span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">apply <span class="string">plugin:</span> <span class="string">&apos;com.neenbedankt.android-apt&apos;</span></span><br><span class="line"></span><br><span class="line">dependencies {</span><br><span class="line">  compile <span class="string">&apos;com.github.tubb.sqlgenerator:sqlgenerator-annotations:0.0.3-SNAPSHOT&apos;</span></span><br><span class="line">  apt <span class="string">&apos;com.github.tubb.sqlgenerator:sqlgenerator-compiler:0.0.3-SNAPSHOT&apos;</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>&#x5B9A;&#x4E49;&#x597D;Model&#x7C7B;&#x4E4B;&#x540E;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#x5E94;&#x7528;, &#x4F1A;&#x751F;&#x6210;&#x4EE5;ModelNameContract&#x547D;&#x540D;&#x7684;&#x8868;<code>&#x5916;&#x89C2;</code>&#x7C7B;, &#x53EF;&#x4EE5;&#x5728;<code>moduleName/build/intermediates/classes</code>&#x76EE;&#x5F55;&#x4E0B;&#x67E5;&#x770B;</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew clean build</span><br></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p><code>SqlGenerator</code>&#x8FD8;&#x5904;&#x4E8E;&#x5F00;&#x53D1;&#x9636;&#x6BB5;, &#x529F;&#x80FD;&#x4E0D;&#x662F;&#x5F88;&#x7A33;&#x5B9A;, &#x6B63;&#x5F0F;&#x9879;&#x76EE;&#x8BF7;&#x8C28;&#x614E;&#x4F7F;&#x7528;&#x3002;&#x975E;&#x5E38;&#x5E0C;&#x671B;&#x6709;&#x5174;&#x8DA3;&#x7684;&#x670B;&#x53CB;&#x6765;&#x4E00;&#x8D77;&#x5B8C;&#x5584;&#x8FD9;&#x4E2A;library</p>
+
+          
         
       
     </div>
