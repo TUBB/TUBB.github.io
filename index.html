@@ -206,7 +206,7 @@
             
               <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
-            关于
+            脸白的我
           </a>
         </li>
       
@@ -227,6 +227,110 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/10/Android端TCP长连接性能优化指北/" itemprop="url">
+                  Android端TCP长连接的性能优化指北
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-03-10T23:09:47+08:00" content="2018-03-10">
+              2018-03-10
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/03/10/Android端TCP长连接性能优化指北/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/10/Android端TCP长连接性能优化指北/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Android&#x7AEF;&#x5B9E;&#x73B0;TCP&#x957F;&#x8FDE;&#x63A5;&#x573A;&#x666F;&#x5176;&#x5B9E;&#x4E0D;&#x591A;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x719F;&#x6089;&#x7684;&#x4E0D;&#x8FC7;&#x63A8;&#x9001;&#x548C;HTTP&#x534F;&#x8BAE;&#x7684;&#x5B9E;&#x73B0;&#xFF08;OkHttp&#xFF09;&#xFF0C;&#x672C;&#x6587;&#x8BA8;&#x8BBA;&#x7684;&#x662F;&#x5728;&#x5B9E;&#x73B0;<code>&#x63A8;&#x9001;</code>&#x957F;&#x8FDE;&#x63A5;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x600E;&#x4E48;&#x6765;&#x505A;&#x6027;&#x80FD;&#x4F18;&#x5316;&#xFF0C;&#x4E0B;&#x6587;&#x53EA;&#x662F;&#x6211;&#x7684;&#x4E00;&#x70B9;&#x62D9;&#x89C1;&#xFF0C;&#x6709;&#x4E0D;&#x59A5;&#x4E4B;&#x5904;&#x8FD8;&#x671B;&#x6307;&#x51FA;</p>
+<h3 id="&#x63A8;&#x9001;&#x957F;&#x8FDE;&#x63A5;"><a href="#&#x63A8;&#x9001;&#x957F;&#x8FDE;&#x63A5;" class="headerlink" title="&#x63A8;&#x9001;&#x957F;&#x8FDE;&#x63A5;"></a>&#x63A8;&#x9001;&#x957F;&#x8FDE;&#x63A5;</h3><p>&#x53EF;&#x4EE5;&#x8BF4;&#x5927;&#x90E8;&#x5206;APP&#x662F;&#x79BB;&#x4E0D;&#x5F00;&#x63A8;&#x9001;&#xFF08;push&#xFF09;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#xFF0C;&#x4E0D;&#x8FC7;&#x5E73;&#x5E38;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x63A5;&#x5165;&#x7B2C;&#x4E09;&#x65B9;SDK&#xFF08;&#x6781;&#x5149;&#x3001;&#x4E2A;&#x63A8;&#x7B49;&#xFF09;&#x5C45;&#x591A;&#xFF0C;&#x56E0;&#x4E3A;&#x8981;&#x505A;&#x4E00;&#x4E2A;&#x63A8;&#x9001;&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x5149;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x7F16;&#x5199;&#x76F8;&#x5E94;&#x7684;Socket&#x901A;&#x4FE1;&#x4EE3;&#x7801;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x66F4;&#x662F;&#x9EBB;&#x70E6;&#xFF0C;&#x8981;&#x5904;&#x7406;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x957F;&#x8FDE;&#x63A5;&#x670D;&#x52A1;&#xFF0C;&#x6D88;&#x606F;&#x8FD8;&#x5F97;&#x53CA;&#x65F6;&#x9001;&#x8FBE;&#xFF0C;&#x4E00;&#x4E24;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x53EF;&#x662F;&#x5403;&#x4E0D;&#x6D88;&#x3002;&#x76F8;&#x5BF9;&#x6765;&#x8BF4;&#x5BA2;&#x6237;&#x7AEF;&#x7F16;&#x5199;Socket&#x901A;&#x4FE1;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x7B80;&#x5355;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x662F;&#x4E5F;&#x662F;&#x8981;&#x5904;&#x7406;&#x4E00;&#x4E9B;&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6BD4;&#x5982;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x5982;&#x4F55;&#x4FDD;&#x6D3B;&#xFF0C;APP&#x8FDB;&#x7A0B;&#x5982;&#x4F55;&#x8DDF;&#x63A8;&#x9001;&#x670D;&#x52A1;&#x8FDB;&#x7A0B;&#x901A;&#x4FE1;&#xFF0C;&#x5982;&#x4F55;&#x8282;&#x7701;&#x624B;&#x673A;&#x7535;&#x91CF;&#x548C;&#x624B;&#x673A;&#x5F31;&#x7F51;&#x60C5;&#x51B5;&#x4E0B;&#x5982;&#x4F55;&#x63D0;&#x5347;&#x901A;&#x4FE1;&#x8D28;&#x91CF;&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x4EE5;&#x540E;&#x6709;&#x65F6;&#x95F4;&#x5206;&#x6790;&#xFF0C;&#x4E0B;&#x9762;&#x6765;&#x770B;&#x770B;TCP&#x957F;&#x8FDE;&#x63A5;&#x6027;&#x80FD;&#x5982;&#x4F55;&#x6765;&#x4F18;&#x5316;</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/03/10/Android端TCP长连接性能优化指北/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1213,7 +1317,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">文章数</span>
             </a>
           </div>
