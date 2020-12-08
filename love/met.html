@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>恋爱计时器</title>
+    <title>小雨与冰冰</title>
     <style>
         body {
             -webkit-font-smoothing: antialiased;
@@ -43,14 +43,26 @@
         .img {
           opacity: 0.5;
           z-index: 1;
-          width: 100%;
-          height: auto;
+          background-image: url('bg.jpeg');
+          background-repeat: repeat;
+          background-size: 100% 100%;
+          -webkit-filter: blur(0.1px);
+          -moz-filter: blur(0.1px);
+          -ms-filter: blur(0.1px);    
+          filter: blur(0.1px);  
         }
+
     </style>
+    <script>
+      window.onload = function() {
+        document.getElementById('img').style.width = window.innerWidth + 'px'
+        document.getElementById('img').style.height = window.innerHeight + 'px'
+      }
+    </script>
 </head>
 
 <body>
-    <img id="img" class="img" src="bg.jpeg"/>
+    <div id="img" class="img" src="bg.jpeg"></div>
     <div class="content">
         <h2>小雨，我们已经相识了</h2>
         <div class="timer">
@@ -59,10 +71,7 @@
     </div>
 
     <script>
-        // var bgEl = document.getElementById('img')
-        // bgEl.style.width = window.width
-        // bgEl.style.height = window.height
-        console.log()
+
         function timer() {
             var start = new Date(2020, 7, 27, 15, 0, 0, 0);
             var t = new Date() - start;
